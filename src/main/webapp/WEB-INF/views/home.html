@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button style="background-color: aqua;color: black"><a href="formCreate">Create</a></button>
+<table border="1">
+  <thead>
+  <tr>
+    <th>STT</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Address</th>
+  </tr>
+  </thead>
+  <tbody>
+  <th:block th:each="c:${list}">
+    <tr>
+      <td th:text="${list.indexOf(c)+1}"></td>
+      <td th:text="${c.name}"></td>
+      <td th:text="${c.email}"></td>
+      <td th:text="${c.address}"></td>
+      <td><a th:href="@{'/delete/'+${c.id}}">delete</a></td>
+      <td><a th:href="@{'/edit/'+${c.id}}">edit</a></td>
+    </tr>
+  </th:block>
+
+  </tbody>
+</table>
+</body>
+</html>

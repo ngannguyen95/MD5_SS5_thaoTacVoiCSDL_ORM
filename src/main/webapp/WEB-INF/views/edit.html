@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/update" method="post" th:object="${cusEdit}">
+  <input type="text" name="id" th:field="*{id}" readonly>
+  <input type="text" name="name" th:field="*{name}">
+  <input type="text" name="email" th:field="*{email}">
+  <input type="text" name="address" th:field="*{address}">
+  <button type="submit" style="background-color: deepskyblue;color: black">update</button>
+</form>
+</body>
+</html>
