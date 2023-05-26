@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>listSong</title>
+</head>
+<body>
+<button><a href="/formCreateSong">Create</a></button>
+<table>
+  <thead>
+  <tr>
+    <th>STT</th>
+    <th>Name</th>
+    <th>Author</th>
+    <th>Catalog</th>
+    <th>PathFile</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="s:${list}">
+    <td th:text="${list.indexOf(s)+1}"></td>
+    <td th:text="${s.songName}"></td>
+    <td th:text="${s.catalog}"></td>
+    <td th:text="${s.author}"></td>
+    <td>
+      <audio th:attr="src=@{'/files/'+${s.getPathFile()}}" controls>
+      </audio>
+    </td>
+    <td>delete</td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
